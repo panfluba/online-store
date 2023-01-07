@@ -7,7 +7,7 @@
     --main-violet-color: #5350d8;
 }
 
-body{
+body {
     font-family: 'Play', sans-serif;
     font-weight: 400;
 }
@@ -35,6 +35,10 @@ body{
     list-style-type: none;
 }
 
+.navbar {
+    margin-bottom: 40px;
+}
+
 nav a {
     text-decoration: none;
     color: #000;
@@ -47,10 +51,132 @@ nav a {
     font-size: 1em;
 }
 
-.nav-list__image{
+.nav-list__title {
+    margin-bottom: 30px;
+}
+
+.nav-list__image {
     width: 30px;
     height: auto;
     margin-right: 10px;
+}
+
+.filter-title {
+    margin-bottom: 30px;
+}
+
+.filter-section {
+    margin-bottom: 15px;
+}
+
+.filter__titles {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.filter-cost-t-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.filter-cost-t-input input {
+    width: 100px;
+    height: 25px;
+    border: 1px solid #5350d8;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.filter-cost-r-input input {
+    width: 100%;
+}
+
+.filter .filter-cost {
+    position: relative;
+    width: 250px;
+    height: 10vh;
+}
+
+.filter .filter-cost-r-input input[type=range] {
+    pointer-events: none;
+    position: absolute;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 14px;
+    box-shadow: inset 0 1px 0 0 #bbbbbb, inset 0 -1px 0 0 #bbbbbb;
+    -webkit-box-shadow: inset 0 1px 0 0 #bbbbbb, inset 0 -1px 0 0 #bbbbbb;
+    overflow: hidden;
+    left: 0;
+    top: 70px;
+    width: 250px;
+    outline: none;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.filter .filter-cost-r-input input[type=range]::-webkit-slider-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 1;
+    outline: 0;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 14px;
+    background-color: #5350d8;
+}
+
+.filter.filter-cost-r-input input[type=range]::-moz-range-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 10;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 14px;
+    background-color: #5350d8;
+}
+
+.filter .filter-cost-r-input input[type=range]::-ms-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 10;
+    -ms-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 14px;
+    border: 0;
+}
+
+.filter .filter-cost-r-input input[type=range]::-moz-range-track {
+    position: relative;
+    z-index: -1;
+    background-color: black;
+    border: 0;
+}
+
+.filter .filter-cost-r-input input[type=range]:last-of-type::-moz-range-track {
+    -moz-appearance: none;
+    background: none;
+    border: 0;
+}
+
+.filter .filter-cost-r-input input[type=range]::-moz-focus-outer {
+    border: 0;
+}
+
+.filter-brand{
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-brand label{
+    margin-bottom: 5px;
 }
 
 .main {
@@ -65,9 +191,11 @@ nav a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    /* border-bottom: 1 px solid #5350d8;
+    margin-bottom: 40px; */
 }
 
-.search-label{
+.search-label {
     display: flex;
     align-items: center;
 }
@@ -84,7 +212,7 @@ nav a {
     padding: 0 20px;
 }
 
-.search__image{
+.search__image {
     width: 32px;
     height: 32px;
     background-color: #35c942;
@@ -110,7 +238,7 @@ nav a {
 }
 
 .goods__image {
-    width: 100%;
+    width: 80%;
 }
 
 .main-topic {
@@ -128,8 +256,9 @@ nav a {
 
 .goods-section__image {
     overflow: hidden;
-    width: auto;
-    height: 350px;
+    /* width: auto; */
+    min-height: 300px;
+    padding: 10%;
     border-radius: 5px 5px 0 0;
     z-index: 5;
     display: flex;
@@ -137,8 +266,32 @@ nav a {
     align-items: center;
 }
 
-.goods-general-title {
-    font-weight: 500;
+.goods-section__title {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* width: 100%; */
+}
+
+.goods-information {
+    margin: 0 20px 20px;
+}
+
+.goods__title {
+    font-weight: 700;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 18px;
+}
+
+.goods-icon__basket {
+    position: relative;
+}
+
+.goods__basket {
+    display: inline-block;
+    position: absolute;
+    right: -25px;
+    bottom: -15px;
+    background-color: #35c942;
+    padding: 10px;
+    border-radius: 10% 50% 50%;
 }
