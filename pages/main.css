@@ -7,6 +7,10 @@
     --main-violet-color: #5350d8;
 }
 
+.main{
+    overflow: hidden;
+}
+
 body {
     font-family: 'Play', sans-serif;
     font-weight: 400;
@@ -177,6 +181,7 @@ nav a {
 
 .filter-brand label{
     margin-bottom: 5px;
+    
 }
 
 .main {
@@ -202,7 +207,7 @@ nav a {
 
 .search-input {
     height: 60px;
-    width: 50vh;
+    width: 35vh;
     border: none;
     background-color: rgba(211, 211, 211, 0.582);
     border-radius: 5vh;
@@ -251,7 +256,6 @@ nav a {
     border: solid 1px var(--main-violet-color);
     border-radius: 5px;
     margin: 0 20px 20px;
-
 }
 
 .goods-section__image {
@@ -268,7 +272,7 @@ nav a {
 
 .goods-section__title {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1px;
     /* width: 100%; */
 }
 
@@ -294,4 +298,68 @@ nav a {
     background-color: #35c942;
     padding: 10px;
     border-radius: 10% 50% 50%;
+}
+
+@media(max-width:1400px){
+    .main-topic {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .goods__basket {
+        width: 40px;
+    }
+    .goods-section__image {
+        min-height: 300px;
+        padding: 0;
+    }
+    .search{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .search-nav{
+        margin-bottom: 20px;
+    }
+}
+@media(max-width:1000px){
+    .main-topic {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .search-nav-list{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media(max-width:800px){
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .header{
+        padding: 50px 10px 10px;
+        background-color: white;
+        border: none;
+    }
+    .main{
+        padding: 0 10px;
+    }
+    .goods-and-filters{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .logo{
+        display: flex;
+        justify-content: center;
+    }
+    .search-input {
+        margin-right: 10px;
+        width: 100%;
+    }
+}
+@media(max-width:420px){
+    .goods-and-filters{
+        justify-content: left;
+        margin-left: 30px;
+    }
 }

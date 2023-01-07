@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,9 @@
 
     <link rel="stylesheet" href="main.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;600;700;900&family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;600;700;900&family=Play:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -20,59 +22,61 @@
                 <div class="logo__image">
                     <img src="" alt="">
                 </div>
-                <h2 class="logo__title"> Логотип </h2>
+                <h2 class="logo__title"> Логоnтип </h2>
             </div>
-            <nav class="navbar">
-                <ul class="nav-list">
-                    <h2 class="nav-list__title"><a href="">Товары</a></h2>
-                    <li><a href="">
-                            <img src="../assets/icons/vcomp.png" alt="" class="nav-list__image">
-                            Компьютеры</a></li>
-                    <li><a href="">
-                            <img src="../assets/icons/vnbook.png" alt="" class="nav-list__image">
-                            Ноутбуки</a></li>
-                    <li><a href="">
-                            <img src="../assets/icons/vmonit.png" alt="" class="nav-list__image">
-                            Мониторы</a></li>
-                    <li><a href="">
-                            <img src="../assets/icons/vkeyb.png" alt="" class="nav-list__image">
-                            Клавиатуры</a></li>
-                    <li><a href="">
-                            <img src="../assets/icons/vmous.png" alt="" class="nav-list__image">
-                            Мыши</a></li>
-                </ul>
-            </nav>
-            <div class="filter">
-                <h2 class="filter-title"> Фильтры </h2>
-                <div class="filter-cost filter-section">
-                    <p class="filter-cost__title filter__titles">Цена</p>
-                    <div class="filter-cost-t-input">
-                        <input type="text" name="" id="">
-                        <input type="text" name="" id="">
+            <div class="goods-and-filters">
+                <nav class="navbar">
+                    <ul class="nav-list">
+                        <h2 class="nav-list__title"><a href="">Товары</a></h2>
+                        <li><a href="">
+                                <img src="../assets/icons/vcomp.png" alt="" class="nav-list__image">
+                                Компьютеры</a></li>
+                        <li><a href="">
+                                <img src="../assets/icons/vnbook.png" alt="" class="nav-list__image">
+                                Ноутбуки</a></li>
+                        <li><a href="">
+                                <img src="../assets/icons/vmonit.png" alt="" class="nav-list__image">
+                                Мониторы</a></li>
+                        <li><a href="">
+                                <img src="../assets/icons/vkeyb.png" alt="" class="nav-list__image">
+                                Клавиатуры</a></li>
+                        <li><a href="">
+                                <img src="../assets/icons/vmous.png" alt="" class="nav-list__image">
+                                Мыши</a></li>
+                    </ul>
+                </nav>
+                <div class="filter">
+                    <h2 class="filter-title"> Фильтры </h2>
+                    <div class="filter-cost filter-section">
+                        <p class="filter-cost__title filter__titles">Цена</p>
+                        <div class="filter-cost-t-input">
+                            <input type="text" name="" id="">
+                            <input type="text" name="" id="">
+                        </div>
+                        <div class="filter-cost-r-input">
+                            <input value="500" min="500" max="50000" step="500" type="range">
+                            <input value="50000" min="500" max="50000" step="500" type="range">
+                        </div>
                     </div>
-                    <div class="filter-cost-r-input">
-                        <input value="500" min="500" max="50000" step="500" type="range">
-                        <input value="50000" min="500" max="50000" step="500" type="range">
+                    <div class="filter-brand filter-section">
+                        <p class="filter-brand__title filter__titles">Бренд</p>
+                        <label for="apple" class="label-apple">
+                            <input type="checkbox" name="label-apple" id="label-apple">
+                            Apple
+                        </label>
+                        <label for="apple" class="label-apple">
+                            <input type="checkbox" name="label-apple" id="label-apple">
+                            Apple
+                        </label>
+                        <label for="apple" class="label-apple">
+                            <input type="checkbox" name="label-apple" id="label-apple">
+                            Apple
+                        </label>
+                        <label for="apple" class="label-apple">
+                            <input type="checkbox" name="label-apple" id="label-apple">
+                            Apple
+                        </label>
                     </div>
-                </div>
-                <div class="filter-brand filter-section">
-                    <p class="filter-brand__title filter__titles">Бренд</p>
-                    <label for="apple" class="label-apple">
-                        <input type="checkbox" name="label-apple" id="label-apple">
-                        Apple
-                    </label>
-                    <label for="apple" class="label-apple">
-                        <input type="checkbox" name="label-apple" id="label-apple">
-                        Apple
-                    </label>
-                    <label for="apple" class="label-apple">
-                        <input type="checkbox" name="label-apple" id="label-apple">
-                        Apple
-                    </label>
-                    <label for="apple" class="label-apple">
-                        <input type="checkbox" name="label-apple" id="label-apple">
-                        Apple
-                    </label>
                 </div>
             </div>
         </header>
@@ -83,7 +87,7 @@
                     <label for="" class="search-label">
                         <input type="text" class="search-input" placeholder="Поиск товара">
                         <!-- <input type="button" class="search-input__icon"> -->
-                            <img src="../assets/icons/wsearch.png" alt="" class="search__image">
+                        <img src="../assets/icons/wsearch.png" alt="" class="search__image">
                         </input>
                     </label>
                 </form>
@@ -94,9 +98,6 @@
                         <li><a href="">ДОСТАВКА</a></li>
                         <li><a href="">
                                 <img src="../assets/icons/bbask.png" alt="">
-                            </a></li>
-                        <li><a href="">
-                                <img src="" alt="">
                             </a></li>
                     </ul>
                 </nav>
