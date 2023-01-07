@@ -1,5 +1,5 @@
 import './main.css';
-import './media.css';
+
 
 
 import products from './products.json'
