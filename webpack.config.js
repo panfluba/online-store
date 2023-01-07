@@ -9,7 +9,7 @@ const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = {
 	mode: 'development',
-	entry: './pages/main.js',
+	entry: './pages/main.ts',
     module: {
         rules: [
             {
