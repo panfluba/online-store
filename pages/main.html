@@ -49,13 +49,23 @@
                     <h2 class="filter-title"> Фильтры </h2>
                     <div class="filter-cost filter-section">
                         <p class="filter-cost__title filter__titles">Цена</p>
-                        <div class="filter-cost-t-input">
-                            <input type="text" name="" id="">
-                            <input type="text" name="" id="">
+                        <!-- <div class="filter-cost-t-input">
+                            <input type="text" name="" id="range-1">
+                            <input type="text" name="" id="range-2">
+                        </div> -->
+                        <div class="values">
+                            <span id="range-1">
+                                0
+                            </span>
+                            <span> &dash; </span>
+                            <span id="range-2">
+                                100
+                            </span>
                         </div>
                         <div class="filter-cost-r-input">
-                            <input value="500" min="500" max="50000" step="500" type="range">
-                            <input value="50000" min="500" max="50000" step="500" type="range">
+                            <div class="slider-track"></div>
+                            <input value="0" min="0" max="9999" step="1" type="range" id="slider-1" oninput="slideOne()">
+                            <input value="9999" min="0" max="9999" step="1" type="range" id="slider-2" oninput="slideTwo()">
                         </div>
                     </div>
                     <div class="filter-brand filter-section">
