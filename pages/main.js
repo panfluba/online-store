@@ -1,3 +1,4 @@
+import { getDefaultFormatCodeSettings } from 'typescript';
 import './main.css';
 
 
@@ -65,6 +66,12 @@ navList.addEventListener('click', function(e){
         createCards(newArr)
     }
 })
+
+// модальное окно
+
+function generateModalWindow() {
+    
+}
 
 // ЭТО ДЛЯ INPUT RANGE В ФИЛЬТРАХ
 

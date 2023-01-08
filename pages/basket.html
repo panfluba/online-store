@@ -14,6 +14,48 @@
         rel="stylesheet">
 </head>
 <body>
+    <div class="modal-dark-window" id="modal-window" onclick="catalog.classList.remove('deactiveModalWindow')">
+        <div class="modal-general-window">
+            <div class="modal-title">
+                <p class="modal__title">Оформление заказа</p>
+                <img src="../assets/icons/cross.svg" alt="">
+            </div>
+            <form action="">
+                <label for="">
+                    <span>Имя Фамилия</span>
+                    <input type="text" name="" id="">
+                </label>
+                <label for="">
+                    <span>Номер телефона</span>
+                    <input type="number" name="" id="">
+                </label>
+                <label for="">
+                    <span>Адрес доставки</span>
+                    <input type="text" name="" id="">
+                </label>
+                <label for="">
+                    <span>E-mail</span>
+                    <input type="email" name="" id="">
+                </label>
+                <div class="modal-window-card">
+                    <label>
+                        Номер карты
+                        <input type="number" name="" id="" class="modal-card__code">
+                    </дclass=>
+                    <label>
+                        Срок действия
+                        <input type="number" name="" id="" class="modal-card__month">
+                    </label>
+                    <label>
+                        CVV
+                        <input type="number" name="" id="" class="modal-card__cvv">
+                    </label>
+                    <div class="modal-card__icon"></div>
+                </div>
+            </form>
+            <button class="modal-button-submit">Готово</button>
+        </div>
+    </div>
     <header class="basket-header">
         <div class="logo">
             <div class="logo__image">
@@ -76,7 +118,7 @@
             </div>
         </div>
         <div class="basket-button">
-            <button class="basket-but-continue"> Оформить заказ </button>
+            <button class="basket-but-continue" onclick="generateModalWindow"> Оформить заказ </button>
         </div>
     </main>
 </body>
