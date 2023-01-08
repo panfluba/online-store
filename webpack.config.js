@@ -45,7 +45,10 @@ module.exports = {
 			template: './pages/main.html',
             filename: 'main.html'
 		}),
-
+		new HTMLWebpackPlugin({
+			template: './pages/basket.html',
+            filename: 'basket.html'
+		}),
 		new MiniCssExtractPlugin({
 			filename: '[name].css'
 		}),

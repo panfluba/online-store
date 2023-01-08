@@ -1,17 +1,22 @@
 import './main.css';
 import './media.css';
+import './basket.css';
 
 import { test } from "./test";
 console.log(test);
 
 import products from './products.json'
 
-let newProductsArr = [...products];
+
+if (document.location.pathname.split('/').includes('main.html')) {
+    let newProductsArr = [...products];
 let checkedBrand = [];
 let checkedCategory ='';
 
-const mainTopic = document.querySelector('.main-topic');
+
+
 function createCards(productsArr) {
+    const mainTopic = document.querySelector('.main-topic');
     mainTopic.innerHTML = "";
     productsArr.forEach(el => {
         mainTopic.innerHTML += 
@@ -35,6 +40,7 @@ function createCards(productsArr) {
                 </div>`;
     });
 }
+
 createCards(products);
 function createBrandList(productsArr) {
     let brandArr = [];
@@ -134,4 +140,5 @@ function allFilterFunc() {
     let arr1 = checkCategory(arr);
     console.log(arr1);
     createCards(arr1);
+}
 }
