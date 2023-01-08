@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket</title>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="basket.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;600;700;900&family=Play:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <header class="basket-header">
+        <div class="logo">
+            <div class="logo__image">
+                <a href="main.html"><img src="../assets/icons/logo.png" alt=""></a>
+            </div>
+        </div>
+        <nav class="search-nav">
+            <ul class="search-nav-list">
+                <li><a href="">ГЛАВНАЯ</a></li>
+                <li><a href="">О НАС</a></li>
+                <!-- <li><a href="">ДОСТАВКА</a></li> -->
+                <!-- <li><a href="">
+                        <img src="../assets/icons/bbask.png" alt="">
+                    </a></li>
+                <li class="basket-info">
+                    <div>Товаров: <span>0</span></div>
+                    <div><span>0</span> б.р</div>
+                </li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <main class="basket-main">
+        <p class="basket-info">В корзине <strong><span> 1</span> товар(-ов)</strong> на сумму <strong><span>10</span> б.р.</strong></p>
+        <div class="basket-goods">
+            <div class="basket-number"> 
+                <span>1</span>
+            </div>
+            <div class="basket-element">
+                <div class="basket-image">
+                    <img src="https://content2.onliner.by/catalog/device/main/5e0e7f6ba3e421da2dd2d3a5a8902dc1.jpeg" alt="">
+                </div>
+                <div class="basket-goods-info">
+                    <span class="basket-title"> Название товара</span>
+                    <span class="basket-brand"> Бренд: GUCCI</span>
+                    <span class="basket-category"> Категория: прикольная</span>
+                </div>
+                <div class="basket-counter">
+                    <div class="basket-counter__plus"> + </div>
+                    <div class="basket-count"> 1 </div>
+                    <div class="basket-counter__minus"> - </div>
+                </div>
+                <div class="basket-cost-info">
+                    <div class="basket-cost"> 50 б.р.</div>
+                    <div class="basket-stock"> В наличии: 1</div>
+                </div>
+                <div class="backet-delete">
+                    <img src="../assets/icons/bbasktrash.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="promo-and-average-cost">
+            <form action="">
+                <span>Промокод</span>
+                <input type="text" name="" id="">
+                <input type="button" value="Применить"> 
+            </form>
+            <div class="basket-average-cost">
+                <p>Итого: 60 б.р.</p>
+            </div>
+        </div>
+        <div class="basket-button">
+            <button class="basket-but-continue"> Оформить заказ </button>
+        </div>
+    </main>
+</body>
+</html>
