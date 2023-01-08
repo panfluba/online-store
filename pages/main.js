@@ -51,3 +51,15 @@ function generateBrandList() {
 }
 generateBrandList()
 // console.log(createBrandList(products));
+
+////////////////////////////////////
+const navList = document.querySelector('.nav-list');
+navList.addEventListener('click', function(e){
+    let target = e.target;
+    if (target.className === 'nav-list__item') {
+        console.log(target.textContent);
+    } else {
+        
+    }
+    console.log(target.className);
+})
