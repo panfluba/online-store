@@ -1,4 +1,5 @@
 import './main.css';
+import './media.css';
 
 import { test } from "./test";
 console.log(test);
