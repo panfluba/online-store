@@ -24,7 +24,7 @@ body {
 .header {
     display: flex;
     flex-direction: column;
-    background-color: rgb(233, 233, 233);
+    background-color: #fff;
     height: 100%;
     padding: 50px 60px;
     border-right: 3px solid var(--main-violet-color);
@@ -52,6 +52,11 @@ nav a {
     color: #000;
     align-items: center;
     display: flex;
+}
+
+.nav-list__item{
+    display: flex;
+    align-items: center;
 }
 
 .nav-list li {
@@ -366,9 +371,15 @@ nav a {
 
 
 .goods-section {
-    border: solid 1px var(--main-violet-color);
+    border: solid 1px #ddd;
     border-radius: 5px;
     margin: 0 20px 20px;
+}
+
+.goods-section:hover{
+    box-shadow: 0 -2px 4px 0 #231f200d, 0 4px 8px 0 #231f201a;
+    scale: 1.008;
+    transition: all 0.3s;
 }
 
 .goods-section__image {
@@ -412,6 +423,18 @@ nav a {
     background-color: #35c942;
     padding: 10px;
     border-radius: 10% 50% 50%;
+}
+
+.goods__basket:hover,
+.search__image:hover{
+    background-color: #3bc046;
+    cursor: pointer;
+}
+
+.goods__basket:active,
+.search__image:active{
+    background-color: #2fad3a;
+    cursor:progress;
 }
 
 .label-apple{
