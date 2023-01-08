@@ -44,7 +44,7 @@ function generateBrandList() {
     createBrandList(products).forEach(el => {
         filterBrand.innerHTML += `
         <label for="apple" class="label-apple">
-        <input type="checkbox" name="label-apple" id="label-apple">
+        <input type="checkbox" name="label-apple" id="label-apple" class="checkbox">
             ${el}
         </label>`
     });
