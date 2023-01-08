@@ -51,3 +51,17 @@ function generateBrandList() {
 }
 generateBrandList()
 // console.log(createBrandList(products));
+
+////////////////////////////////////
+const navList = document.querySelector('.nav-list');
+navList.addEventListener('click', function(e){
+    let target = e.target;
+    if (target.className === 'nav-list__item') {
+        let newArr = products.filter(el => el.category == target.lastElementChild.textContent);
+        createCards(newArr)
+
+    } else if (target.parentElement.className === 'nav-list__item') {
+        let newArr = products.filter(el => el.category == target.parentElement.lastElementChild.textContent);
+        createCards(newArr)
+    }
+})
