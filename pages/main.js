@@ -19,7 +19,7 @@ function createCards(productsArr) {
                             <div class="goods-information">
                                 <p class="goods__title">${el.title}</p>
                                 <p class="goods__brand">${el.brand}</p>
-                                <p class="goods__cost">${el.price}</p>
+                                <p class="goods__cost">${el.price} б.р.</p>
                             </div>
                             <div class="goods-icon__basket">
                                 <img src="../assets/icons/wbask.png" alt="basket" class="goods__basket">
