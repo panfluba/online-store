@@ -99,21 +99,49 @@ function priceFilter(arr) {
     const priseArr = arr.map(el => el.price).sort((a,b) => a -b);
     const minPrice = priseArr[0];
     const maxPrice = priseArr[priseArr.length - 1];
-    range1Input.setAttribute('min', minPrice);
-    range2Input.setAttribute('min', minPrice);
-    range1Input.setAttribute('value', minPrice);
-    range1Input.setAttribute('max', maxPrice);
-    range2Input.setAttribute('max', maxPrice);
-    range2Input.setAttribute('value', maxPrice);
-    range1Value.innerHTML = minPrice;
-    range2Value.innerHTML = maxPrice;
-    return arr;
+    // range1Input ? range1Input.setAttribute('min', minPrice) : false;
+    // range2Input ? range2Input.setAttribute('min', minPrice) : false;
+    range1Input ? range1Input.setAttribute('value', minPrice) : false;
+    // range1Input ? range1Input.setAttribute('max', maxPrice) : false;
+    // range2Input ? range2Input.setAttribute('max', maxPrice) : false;
+    range2Input ? range2Input.setAttribute('value', maxPrice) : false;
+    range1Input ? range1Value.innerHTML = range1Input.value : false;
+    range2Input ? range2Value.innerHTML = range2Input.value : false;
+    return [arr, minPrice, maxPrice]; 
 }
 
 range1Input.addEventListener('change', function(){
-    let arr = newProductsArr.filter(el => el.price > range1Input.value)
-    allFilterFunc(arr)
+    if (+range1Input.value < +range2Input.value) {
+        let arr = newProductsArr.filter(el => el.price > range1Input.value)
+        range1Value.innerHTML =range1Input.value;
+        // arr = newProductsArr.filter(el => el.price < range2Input.value)
+        // range2Value.innerHTML =range2Input.value;
+        console.log(range1Input.value, range2Input.value);
+        allFilterFunc(arr);
+    } else {
+        let arr = newProductsArr.filter(el => el.price > range2Input.value)
+        range1Value.innerHTML =range2Input.value;
+        console.log(range1Input.value, range2Input.value);
+        // arr = newProductsArr.filter(el => el.price < range1Input.value)
+        // range1Value.innerHTML =range1Input.value;
+        allFilterFunc(arr);
+    }
 })
+range2Input.addEventListener('change', function(){
+    if (+range1Input.value < +range2Input.value) {
+
+        let arr = newProductsArr.filter(el => el.price < range2Input.value)
+        range2Value.innerHTML =range2Input.value;
+        console.log(range2Input.value);
+        allFilterFunc(arr);
+    } else {
+
+        let arr = newProductsArr.filter(el => el.price < range1Input.value)
+        range2Value.innerHTML =range1Input.value;
+        allFilterFunc(arr);
+    }
+})
+
 
 
 
@@ -185,21 +213,21 @@ function allFilterFunc(productsArr) {
     console.log(arr);
     let arr1 = checkCategory(arr);
     let arr2 = priceFilter(arr1);
-    createCards(arr2);
-    console.log(arr,'arr');
     
+    console.log(arr2,'a');
+    createCards(arr2[0]);    
 }
 allFilterFunc(newProductsArr)
 }
 
-let buttonSubmitBasket = document.querySelector(".basket-but-continue");
-function generateModalWindow() {
-    if (buttonSubmitBasket.classList.contains("modal-dark-window")) {
-        buttonSubmitBasket.classList.remove('modal-dark-window');
-        console.log('sdsdsd')
-    } else {
-        buttonSubmitBasket.classList.add("modal-dark-window");
-        console.log('sdsdsd')
-    }
-}
-buttonSubmitBasket.addEventListener("click", generateModalWindow)
+// let buttonSubmitBasket = document.querySelector(".basket-but-continue");
+// function generateModalWindow() {
+//     if (buttonSubmitBasket.classList.contains("modal-dark-window")) {
+//         buttonSubmitBasket.classList.remove('modal-dark-window');
+//         console.log('sdsdsd')
+//     } else {
+//         buttonSubmitBasket.classList.add("modal-dark-window");
+//         console.log('sdsdsd')
+//     }
+// }
+// buttonSubmitBasket.addEventListener("click", generateModalWindow)
