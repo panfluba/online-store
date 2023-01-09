@@ -448,6 +448,33 @@ nav a {
     height: 20px;
 }
 
+.range-1 {
+    position: absolute;
+
+    appearance: none;
+    width: 96%;
+    margin: 2%;
+    overflow: hidden;
+    outline: none;
+    background-size: 100% 2px;
+    pointer-events: none;
+}
+
+.range-2 {
+    appearance: none;
+    width: 96%;
+    margin: 2%;
+    overflow: hidden;
+    outline: none;
+    background: linear-gradient(#5350d8,#5350d8) no-repeat center;
+    background-size: 100% 2px;
+    pointer-events: none;
+    position: absolute;
+}
+.multi-range {
+    position: relative;
+    height: 2rem;
+}
 
 @media(max-width:1500px){
     .main-topic {

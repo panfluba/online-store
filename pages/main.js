@@ -2,6 +2,10 @@ import './main.css';
 import './media.css';
 import './basket.css';
 
+// import { basket } from "./basket";
+
+// let buttonSubmitBasket = document.getElementById("basket-but-continue");
+// buttonSubmitBasket.addEventListener("click", basket)
 import { test } from "./test";
 console.log(test);
 
@@ -13,9 +17,15 @@ if (document.location.pathname.split('/').includes('main.html')) {
 let checkedBrand = [];
 let checkedCategory ='';
 
-
+const range1Input = document.querySelector('.range-1');
+const range2Input = document.querySelector('.range-2');
+const range1Value = document.querySelector('.range-1__value');
+const range2Value = document.querySelector('.range-2__value');
 
 function createCards(productsArr) {
+    console.log(productsArr);
+
+
     const mainTopic = document.querySelector('.main-topic');
     mainTopic.innerHTML = "";
     productsArr.forEach(el => {
@@ -39,9 +49,11 @@ function createCards(productsArr) {
                     </div>
                 </div>`;
     });
+
+
 }
 
-createCards(products);
+// createCards(products);
 function createBrandList(productsArr) {
     let brandArr = [];
     products.forEach(el => {
@@ -73,13 +85,49 @@ categoryList.addEventListener('click', function(e){
     } else if (target.parentElement.className === 'nav-list__item') {
         checkedCategory = target.parentElement.lastElementChild.textContent;
     }
-    allFilterFunc()
+    allFilterFunc(newProductsArr)
 })
 function checkCategory(arr) {
     return checkedCategory ? arr.filter(el => el.category === checkedCategory) : arr;
 }
 
 // ЭТО ДЛЯ INPUT RANGE В ФИЛЬТРАХ
+
+
+
+function priceFilter(arr) {
+    const priseArr = arr.map(el => el.price).sort((a,b) => a -b);
+    const minPrice = priseArr[0];
+    const maxPrice = priseArr[priseArr.length - 1];
+    range1Input.setAttribute('min', minPrice);
+    range2Input.setAttribute('min', minPrice);
+    range1Input.setAttribute('value', minPrice);
+    range1Input.setAttribute('max', maxPrice);
+    range2Input.setAttribute('max', maxPrice);
+    range2Input.setAttribute('value', maxPrice);
+    range1Value.innerHTML = minPrice;
+    range2Value.innerHTML = maxPrice;
+    return arr;
+}
+
+range1Input.addEventListener('change', function(){
+    let arr = newProductsArr.filter(el => el.price > range1Input.value)
+    allFilterFunc(arr)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // window.onload = function(){
 //     slideOne();
@@ -124,21 +172,34 @@ for (let i = 0; i < brandInputs.length; i++) {
         } else {
             checkedBrand = checkedBrand.filter(el => el != brandInput.parentElement.lastElementChild.textContent)
         }
-        allFilterFunc()
+        allFilterFunc(newProductsArr)
     })
     
 }
-function productsArrSortBrand() {
-    let productsArrSortBrand = newProductsArr.filter(el => checkedBrand.includes(el.brand));
-        // console.log(productsArrSortBrand);
-        // console.log(checkedBrand.length ? productsArrSortBrand : newProductsArr);
-    return checkedBrand.length ? productsArrSortBrand : newProductsArr;
+function productsArrSortBrand(productsArr) {
+    let productsArrSortBrand = productsArr.filter(el => checkedBrand.includes(el.brand));
+    return checkedBrand.length ? productsArrSortBrand : productsArr;
 }
-function allFilterFunc() {
-    let arr = productsArrSortBrand();
+function allFilterFunc(productsArr) {
+    let arr = productsArrSortBrand(productsArr);
     console.log(arr);
     let arr1 = checkCategory(arr);
-    console.log(arr1);
-    createCards(arr1);
+    let arr2 = priceFilter(arr1);
+    createCards(arr2);
+    console.log(arr,'arr');
+    
 }
+allFilterFunc(newProductsArr)
 }
+
+let buttonSubmitBasket = document.querySelector(".basket-but-continue");
+function generateModalWindow() {
+    if (buttonSubmitBasket.classList.contains("modal-dark-window")) {
+        buttonSubmitBasket.classList.remove('modal-dark-window');
+        console.log('sdsdsd')
+    } else {
+        buttonSubmitBasket.classList.add("modal-dark-window");
+        console.log('sdsdsd')
+    }
+}
+buttonSubmitBasket.addEventListener("click", generateModalWindow)
