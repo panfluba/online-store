@@ -233,3 +233,17 @@ allFilterFunc(newProductsArr)
 //     }
 // }
 // buttonSubmitBasket.addEventListener("click", generateModalWindow)
+
+
+/////////////////////////////////////////////
+const modalWindowBtn = document.querySelector('.basket-but-continue');
+const modalWindow = document.querySelector('.modal-window');
+modalWindowBtn.addEventListener('click', function(){
+    modalWindow.classList.add('active')
+});
+modalWindow.addEventListener('click', function(e){
+    if (e.target.className === 'modal-window active') {
+        modalWindow.classList.remove('active')
+    }
+    
+})
